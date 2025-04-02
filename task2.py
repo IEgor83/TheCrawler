@@ -59,10 +59,10 @@ def tokenize_and_lemmatize():
         for token in sorted(tokens_set):
             f.write(token + "\n")
 
-    # Записываем леммы
+    # Записываем леммы в нужном формате
     with open(LEMMAS_FILE, "w", encoding="utf-8") as f:
         for lemma, words in sorted(lemmas_dict.items()):
-            f.write(f"{lemma} {' '.join(words)}\n")
+            f.write(f"{lemma}: {' '.join(sorted(words))}\n")
 
 if __name__ == "__main__":
     tokenize_and_lemmatize()

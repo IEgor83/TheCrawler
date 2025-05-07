@@ -1,0 +1,21 @@
+<!-- templates/results.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Результаты поиска</title>
+</head>
+<body>
+  <h1>Результаты по запросу: "{{ query }}"</h1>
+  {% if results %}
+    <ul>
+    {% for url, score in results %}
+      <li><a href="{{ url }}" target="_blank">{{ url }}</a></li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>Ничего не найдено.</p>
+  {% endif %}
+  <a href="/">Назад</a>
+</body>
+</html>
